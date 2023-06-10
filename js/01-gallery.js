@@ -31,9 +31,7 @@ function onGalleryContainerClick(evt) {
 
   const swatchEl = evt.target;
   const gallaryLargeImgSource = swatchEl.dataset.source
-  console.log(gallaryLargeImgSource);
-
- 
+   
   const instance = basicLightbox.create(`
     <img src="${gallaryLargeImgSource}" width="800" height="600">
   `);
