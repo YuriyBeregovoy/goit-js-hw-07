@@ -33,15 +33,17 @@ function onGalleryContainerClick(evt) {
   const gallaryLargeImgSource = swatchEl.dataset.source
   console.log(gallaryLargeImgSource);
 
+ 
+  const instance = basicLightbox.create(`
+    <img src="${gallaryLargeImgSource}" width="800" height="600">
+  `);
 
-  // const curentActiveCard = document.querySelector(".gallery__item.is-active");
-  // if (curentActiveCard) {
-  //   curentActiveCard.classList.remove("is-active");
-  // }
-  // const parentGallaryCard = swatchEl.closest(".gallery__item")
-  // parentGallaryCard.classList.add("is-active");
-
+  instance.show();
   
 };
+
+
+
+
 
 
