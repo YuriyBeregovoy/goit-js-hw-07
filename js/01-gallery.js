@@ -24,23 +24,25 @@ galleryContainer.addEventListener("click", onGalleryContainerClick);
 
 function onGalleryContainerClick(evt) {
   evt.preventDefault();
+
+  const swatchEl = evt.target;
   
-  if (!evt.target.classList.contains("gallery__image")) {
+  if (!swatchEl.classList.contains("gallery__image")) {
     return;
   }
 
-  const swatchEl = evt.target;
   const gallaryLargeImgSource = swatchEl.dataset.source
    
-  const instance = basicLightbox.create(`
-    <img src="${gallaryLargeImgSource}" width="800" height="600">
-  `);
-
-  instance.show();
+  addModalWindowGallery(gallaryLargeImgSource);
   
 };
 
-
+function addModalWindowGallery(url) {
+  const instance = basicLightbox.create(`
+    <img src="${url}" width="800" height="600">
+  `);
+  instance.show();
+}
 
 
 
