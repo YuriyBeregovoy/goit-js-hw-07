@@ -1,7 +1,12 @@
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
+// Change code below this line\\
+
+const galleryContainer = document.querySelector(".gallery");
+const cardsMarkup = createGalleryMarkup(galleryItems);
+galleryContainer.insertAdjacentHTML("beforeend", cardsMarkup)
 
 console.log(createGalleryMarkup(galleryItems));
+
 
 function createGalleryMarkup(galleryItems) {
   return galleryItems.map(({ preview, original, description }) => {
@@ -18,7 +23,5 @@ function createGalleryMarkup(galleryItems) {
   }).join("");
 
 };
-
-
 
 console.log(galleryItems);
