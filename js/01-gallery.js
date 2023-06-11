@@ -45,7 +45,7 @@ function addModalWindowGallery(url) {
     <img src="${url}" width="800" height="600">
   `);
   instance.show();
-    }
+};
 
 
 function onEscKeyPress(evt) {
@@ -53,8 +53,8 @@ function onEscKeyPress(evt) {
   if (evt.code === "Escape") {
      window.removeEventListener("keydown", onEscKeyPress); 
     instance.close();
-  }
+  };
   console.log(evt);
-}
+};
 
 
