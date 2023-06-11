@@ -3,7 +3,15 @@ import { galleryItems } from './gallery-items.js';
 
 const galleryContainer = document.querySelector(".gallery");
 const cardsMarkup = createGalleryMarkup(galleryItems);
-galleryContainer.insertAdjacentHTML("beforeend", cardsMarkup)
+galleryContainer.insertAdjacentHTML("beforeend", cardsMarkup);
+
+var lightbox = new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionsData: "alt",
+  captionPosition: 'bottom',
+  captionDelay: 250,
+
+});
 
 function createGalleryMarkup(galleryItems) {
   return galleryItems.map(({ preview, original, description }) => {
@@ -14,43 +22,9 @@ function createGalleryMarkup(galleryItems) {
 </li>`;}).join("");
 };
 
-galleryContainer.addEventListener("click", onGalleryContainerClick);
-
-function onGalleryContainerClick(evt) {
-  evt.preventDefault();
-
-  const swatchEl = evt.target;
-  
-  if (!swatchEl.classList.contains("gallery__image")) {
-    return;
-  }
-
-  // const gallaryLargeImgSource = swatchEl.dataset.source
-   
-  // addModalWindowGallery(gallaryLargeImgSource);
-  
-};
 
 
-// let instance;
 
-// function addModalWindowGallery(url) {
-//   window.addEventListener("keydown", onEscKeyPress);
-//   instance = basicLightbox.create(`
-//     <img src="${url}" width="800" height="600">
-//   `);
-//   instance.show();
-// };
-
-
-// function onEscKeyPress(evt) {
- 
-//   if (evt.code === "Escape") {
-//      window.removeEventListener("keydown", onEscKeyPress); 
-//     instance.close();
-//   };
-//   console.log(evt);
-// };
 
 
 
